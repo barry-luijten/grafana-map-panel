@@ -345,6 +345,7 @@ export default class DataFormatter {
         if (location) {
           latitude = latitude || location.latitude;
           longitude = longitude || location.longitude;
+          key = `${latitude}_${longitude}`;
         }
         // Assign link.
         const link = datapoint[this.settings.tableQueryOptions.linkField] || null;
