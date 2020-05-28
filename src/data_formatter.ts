@@ -342,7 +342,10 @@ export default class DataFormatter {
         const location = _.find(this.ctrl.locations, loc => {
           return loc.key === labelJsonKey;
         });
-
+        if (location) {
+          latitude = latitude || location.latitude;
+          longitude = longitude || location.longitude;
+        }
         // Assign link.
         const link = datapoint[this.settings.tableQueryOptions.linkField] || null;
 
